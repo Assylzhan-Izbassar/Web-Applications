@@ -1,0 +1,38 @@
+<div class="posts">
+    <div class="posts__container">
+        <div class="posts__inner">
+            <div class="input-block">
+                <div class="input-block__img">
+                    <img src="" alt="">
+                </div>
+                <div class="input-block__input">
+                    <input type="text">
+                    <div class="btn">
+                        <button>Tweet</button>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="posts__content">
+                <li *ngFor="let post of posts" class="posts__item">
+                    <div class="posts_user">
+                        <p>{{post.user.username}}</p>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                        <button>Save</button>
+                    </div>
+                    <div class="posts__text">
+                        <p>{{post.content}}</p>
+                    </div>
+
+                    <div class="posts__actions">
+                        <span>{{post.likeCount}}</span>
+                        <button>Like</button>
+                        <span>{{post.disLikeCount}}</span>
+                        <button>Dislike</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
