@@ -2,9 +2,13 @@
     <div class="profile__container">
         <div class="profile__inner">
             <div class="profile__input">
-                <input type="text" placeholder="Введи свое имя">
-                <button>Найти</button>
+                <input type="text" placeholder="Введи свое имя" [(ngModel)]="username">
+                <button (click)="find()">Найти</button>
                 <p>Тут например нужно вести Assylzhan или Nurislam</p>
+            </div>
+            <div class="user__content">
+                <p>{{user?.username}}</p>
+                <p>{{user?.postCount}}</p>
             </div>
         </div>
     </div>

@@ -7,13 +7,16 @@ import { PostComponent } from './post/post.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RouterModule } from '@angular/router';
-import { ParseSourceFile } from '@angular/compiler';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: '', component: PostComponent, pathMatch: 'full' },
       { path: 'profile', component: ProfileComponent },
@@ -23,7 +26,7 @@ import { ParseSourceFile } from '@angular/compiler';
     AppComponent,
     PostComponent,
     HeaderComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

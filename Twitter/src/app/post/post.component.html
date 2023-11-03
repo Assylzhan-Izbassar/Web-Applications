@@ -6,19 +6,19 @@
                     <img src="" alt="">
                 </div>
                 <div class="input-block__input">
-                    <input type="text">
+                    <input type="text" [(ngModel)]="tweetText">
                     <div class="btn">
-                        <button>Tweet</button>
+                        <button (click)="tweet()">Tweet</button>
                     </div>
                 </div>
             </div>
 
             <ul class="posts__content">
-                <li *ngFor="let post of posts" class="posts__item">
+                <li *ngFor="let post; let idx=index of posts" class="posts__item">
                     <div class="posts_user">
                         <p>{{post.user.username}}</p>
                         <button>Edit</button>
-                        <button>Delete</button>
+                        <button (click)="delete(idx)">Delete</button>
                         <button>Save</button>
                     </div>
                     <div class="posts__text">
@@ -27,9 +27,9 @@
 
                     <div class="posts__actions">
                         <span>{{post.likeCount}}</span>
-                        <button>Like</button>
+                        <button (click)="like(idx)">Like</button>
                         <span>{{post.disLikeCount}}</span>
-                        <button>Dislike</button>
+                        <button (click)="dislike(idx)">Dislike</button>
                     </div>
                 </li>
             </ul>
